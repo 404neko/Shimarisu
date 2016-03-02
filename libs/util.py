@@ -160,3 +160,12 @@ def creat_folder(path):
             path0=path0+path_item+os.sep
             if not os.path.exists(path0):
                 os.mkdir(path0)
+
+def un(list_):
+  new = []
+  for i in list_:
+    if type(i)==list:
+      new+=un(i)
+    else:
+      new+=[i]
+  return new
